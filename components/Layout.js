@@ -1,7 +1,7 @@
-import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import Header from "./Header";
+import Header from './Header';
 
 const Wrapper = styled.div`
   display: grid;
@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
+    font-size: 16px;
     color: white;
     margin:0;
     padding:0;
