@@ -1,7 +1,7 @@
-import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import React from "react";
+import styled, { createGlobalStyle } from "styled-components";
 
-import Header from './Header';
+import Header from "./Header";
 
 const Wrapper = styled.div`
   display: grid;
@@ -15,6 +15,18 @@ const ContentWrapper = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    /* &:visited {
+      margin-right: 1em;
+      color: #1dc121;
+    } */
+    &:hover {
+      outline: 1px solid white;
+    }
+  }
   html {
     box-sizing: border-box;
   }  
@@ -31,6 +43,11 @@ const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
+  }
+  h2 {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
   }
 `;
 const Layout = props => {

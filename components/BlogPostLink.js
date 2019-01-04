@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'next/link';
+import React from "react";
+import styled from "styled-components";
+import Link from "next/link";
 
 const BlogPostCard = styled.div`
   width: 100%;
@@ -10,28 +10,12 @@ const BlogPostCard = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    padding: 10px;
     &:before {
-      content: '\u2713';
+      content: "\u2713";
       position: absolute;
       left: -2em;
       color: #1dc121;
-    }
-  }
-  h2 {
-    font-size: 16px;
-    padding: 0;
-    margin: 0;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    padding: 0.25em;
-    /* &:visited {
-      margin-right: 1em;
-      color: #1dc121;
-    } */
-    &:hover {
-      outline: 1px solid white;
     }
   }
   .date__wrap {
@@ -42,14 +26,23 @@ const BlogPostCard = styled.div`
   }
 `;
 
-const BlogPost = props => {
+const BlogPostLink = props => {
   return (
     <BlogPostCard>
-      <Link href="">
+      <Link
+        href={{
+          pathname: "/blog-post",
+          query: {
+            title: `${props.title}`,
+            content: `${props.content}`,
+            date: `${props.date}`
+          }
+        }}
+      >
         <a className="post__wrapper">
           <h2>{props.title}</h2>
           <div className="date__wrap">
-            {' '}
+            {" "}
             <span className="date"> {props.date}</span>
           </div>
         </a>
@@ -58,4 +51,4 @@ const BlogPost = props => {
   );
 };
 
-export default BlogPost;
+export default BlogPostLink;

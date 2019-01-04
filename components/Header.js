@@ -8,6 +8,7 @@ const Topbar = styled.header`
   align-items: center;
   justify-items: center;
   margin-bottom: 5em;
+  text-align: center;
   border-bottom: white solid 1px;
   a {
     margin-right: 2.5em;
